@@ -9,12 +9,11 @@ public class Shoot : MonoBehaviour
     public static int shootNum = 0;
     [SerializeField]
     float force = 10;
-    [SerializeField]
     Transform camera;
     // Start is called before the first frame update
     void Start()
     {
-        
+        camera = Camera.main.transform;
     }
 
     // Update is called once per frame
