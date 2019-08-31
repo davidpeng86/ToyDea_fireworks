@@ -28,16 +28,8 @@ public class firework : MonoBehaviour
     void Update()
     {
         if(body.velocity.y <= 0f && explode == true){
-<<<<<<< HEAD
-            
-            //DOTween.CompleteAll();
-            s.Append(camera.DOShakePosition(0.2f,new Vector2(0.4f,0.6f),20,60)).OnComplete(() => 
-            camera.position = Vector2.Lerp(camera.position,Vector2.zero,0.5f));
-            
-=======
             scoreTracker.reduceStars();
             camera.DOShakePosition(0.2f,new Vector2(0.4f,0.6f),20,60);
->>>>>>> 1c76322bdc8046331c82a41d8375d96807289238
             blast.SetActive(true);
             blast.transform.parent = null;
             Destroy(blast,3);            
