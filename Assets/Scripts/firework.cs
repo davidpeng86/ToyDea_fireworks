@@ -27,20 +27,10 @@ public class firework : MonoBehaviour
             camera.DOShakePosition(0.2f,new Vector2(0.4f,0.6f),20,60);
             blast.SetActive(true);
             blast.transform.parent = null;
-            switch(Shoot.shootNum){
-                case 1:
-                    ScoreTracker.stars = 3;
-                    break;
-                case 2:
-                    ScoreTracker.stars = 2;
-                    break;
-                case 3:
-                    ScoreTracker.stars = 1;
-                    break;
-                default:
-                    ScoreTracker.stars = 0;
-                    break;
-            }
+            if (Shoot.shootNum > 3 || Shoot.shootNum < 0)
+                ScoreTracker.stars = 0;
+            else
+                ScoreTracker.stars = 4 - Shoot.shootNum;
             print(ScoreTracker.stars);
             Destroy(gameObject);
         }
