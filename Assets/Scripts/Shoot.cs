@@ -4,7 +4,11 @@ using UnityEngine;
 using DG.Tweening;
 public class Shoot : MonoBehaviour
 {
+<<<<<<< HEAD
     public int coolDown = 4;
+=======
+    //public ScoreTracker scoreTracker;
+>>>>>>> 1c76322bdc8046331c82a41d8375d96807289238
     [SerializeField]
     GameObject prefab;
     public static int shootNum = 0;
