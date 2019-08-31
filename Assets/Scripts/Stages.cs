@@ -7,7 +7,7 @@ public class Stages : MonoBehaviour
     // Start is called before the first frame update
     public int stageNum;
     public int angle;
-
+    bool isPlaying = false;
     public bool isSelected = false;
     
     void Start()
@@ -23,12 +23,14 @@ public class Stages : MonoBehaviour
     {
         if(isSelected){
             transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
-            FindObjectOfType<AudioManager>().play("Geta");
+            if(!isPlaying){
+                isPlaying = true;
+                FindObjectOfType<AudioManager>().play("Geta");
+            }
         }
         else{
+            isPlaying = false;
             transform.localScale = Vector3.one;
         }
-
-        
     }
 }
