@@ -11,11 +11,13 @@ public class MenuButton : MonoBehaviour
     bool track;
     int selected = 0;
 
-    private float pressTime;
+    private float pressTime,startTime,endTime;
     // Start is called before the first frame update
     void Start()
     {
         pressTime = 0f; 
+        startTime = 0f;
+        endTime = 0f;
         selected = 0;
         track = false;
     }
@@ -26,19 +28,28 @@ public class MenuButton : MonoBehaviour
 
         if(Input.GetMouseButtonDown(0))
         {
+            startTime  = Time.time;
+            
+            
+        }
+        if(Input.GetMouseButton(0)){
             pressTime += Time.deltaTime;
-            if(pressTime > 0.5f)
+            print(pressTime);
+            if(pressTime > 0.1f){
+                print("isTrack");
                 track = true;
-            else{
-                for(int i = 0; i < buttons.Length; i++){
-                    if(i == selected && buttons[i].stageName != null){
-                       SceneManager.LoadScene(buttons[i].stageName); 
-                    }
-                }
             }
         }
         if(Input.GetMouseButtonUp(0))
         {
+            endTime = Time.time;
+            if(endTime - startTime < 0.1f){
+                for(int i = 0; i < buttons.Length; i++){
+                    if(i == selected && buttons[i].stageName != ""){
+                        SceneManager.LoadScene(buttons[i].stageName); 
+                    }
+                }
+            }
             track = false;
         }
 
