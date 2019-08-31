@@ -9,7 +9,7 @@ public class MenuButton : MonoBehaviour
 
     Vector3 mousePreviousPOS = Vector3.zero;
     bool track;
-    int selected = 0;
+    int onSelected = 0;
 
     private float pressTime,startTime,endTime;
     // Start is called before the first frame update
@@ -18,7 +18,7 @@ public class MenuButton : MonoBehaviour
         pressTime = 0f; 
         startTime = 0f;
         endTime = 0f;
-        selected = 0;
+        onSelected = 0;
         track = false;
     }
 
@@ -44,7 +44,7 @@ public class MenuButton : MonoBehaviour
             endTime = Time.time;
             if(endTime - startTime < 0.1f){
                 for(int i = 0; i < buttons.Length; i++){
-                    if(i == selected && buttons[i].stageName != ""){
+                    if(i == onSelected && buttons[i].stageName != ""){
                         SceneManager.LoadScene(buttons[i].stageName); 
                     }
                 }
@@ -73,7 +73,7 @@ public class MenuButton : MonoBehaviour
             for (int i = 0; i < buttons.Length; i++)
                 buttons[i].isSelected = false;  //return all seleted to zero
 
-            buttons[onSelected] = true;
+            buttons[onSelected].isSelected = true;
             transform.rotation = Quaternion.Euler(0, 0, buttons[onSelected].angle);
             // if(Mathf.Cos(Mathf.Deg2Rad*transform.eulerAngles.z) > Mathf.Cos(Mathf.Deg2Rad*16) ) 
             // {

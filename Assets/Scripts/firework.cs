@@ -18,7 +18,7 @@ public class firework : MonoBehaviour
         s = DOTween.Sequence();
         ZoomTrigger.zoomReady = true;
         scoreTracker = FindObjectOfType<ScoreTracker>();
-        camera = Camera.main.transform;
+        transformedCamera = Camera.main.transform;
         body = GetComponent<Rigidbody2D>();
         renderer = GetComponent<SpriteRenderer>();
         Shoot.shootNum ++;
@@ -27,17 +27,17 @@ public class firework : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(body.velocity.y <= 0f && explode == true){
+        if(body.velocity.y <= 0f && canExplode == true){
             
             //DOTween.CompleteAll();
-            s.Append(camera.DOShakePosition(0.2f,new Vector2(0.4f,0.6f),20,60)).OnComplete(() => 
-            camera.position = Vector2.Lerp(camera.position,Vector2.zero,0.5f));
+            s.Append(transformedCamera.DOShakePosition(0.2f,new Vector2(0.4f,0.6f),20,60)).OnComplete(() => 
+            transformedCamera.position = Vector2.Lerp(transformedCamera.position,Vector2.zero,0.5f));
             
             scoreTracker.reduceStars();
-            camera.DOShakePosition(0.2f,new Vector2(0.4f,0.6f),20,60).OnComplete(() => 
-                camera.transform.position = new Vector3(0,0,-10));
+            transformedCamera.DOShakePosition(0.2f,new Vector2(0.4f,0.6f),20,60).OnComplete(() => 
+                transformedCamera.transform.position = new Vector3(0,0,-10));
             scoreTracker.reduceStars();
-            camera.DOShakePosition(0.2f,new Vector2(0.4f,0.6f),20,60);
+            transformedCamera.DOShakePosition(0.2f,new Vector2(0.4f,0.6f),20,60);
             blast.SetActive(true);
             blast.transform.parent = null;
             Destroy(blast,3);            
@@ -50,7 +50,7 @@ public class firework : MonoBehaviour
         scoreTracker.reduceStars();
         if(other.gameObject.tag == "obstacles"){
             renderer.color = Color.red;
-            explode = false;
+            canExplode = false;
             Destroy(gameObject,3);
         }
     }
