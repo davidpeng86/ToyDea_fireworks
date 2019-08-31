@@ -5,15 +5,16 @@ using UnityEngine.UI;
 
 public class ScoreTracker : MonoBehaviour
 {
+    public Shoot shootLib;
     private int stars;
     public Image star1, star2, star3;
+    public GameObject canvas;
     private bool isFinish = false;
     // Start is called before the first frame update
     void Start()
     {
         stars = 4;
         isFinish = false;
-    
     }
     public void reduceStars()
     {
@@ -29,7 +30,9 @@ public class ScoreTracker : MonoBehaviour
     {
         if (isFinish)
         {
-            showScore();
+            shootLib.coolDown = 2147483647; //make coolDown big enough to prevent user shoot
+            canvas.SetActive(true);
+            showScore();   
         }
     }
     public void doFinish()

@@ -9,8 +9,8 @@ public class firework : MonoBehaviour
     Transform transformedCamera;
     bool canExplode = true;
     [SerializeField]
-    GameObject blast;
-    SpriteRenderer renderer;
+    public GameObject blast;
+    SpriteRenderer starRenderer;
     Sequence s ;
     // Start is called before the first frame update
     void Start()
@@ -18,18 +18,24 @@ public class firework : MonoBehaviour
         s = DOTween.Sequence();
         ZoomTrigger.zoomReady = true;
         scoreTracker = FindObjectOfType<ScoreTracker>();
-        camera = Camera.main.transform;
+        transformedCamera = Camera.main.transform;
         body = GetComponent<Rigidbody2D>();
-        renderer = GetComponent<SpriteRenderer>();
+        starRenderer = GetComponent<SpriteRenderer>();
         Shoot.shootNum ++;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(body.velocity.y <= 0f && explode == true){
+        if(body.velocity.y <= 0f && canExplode == true){
+
+            //DOTween.CompleteAll();
             scoreTracker.reduceStars();
-            camera.DOShakePosition(0.2f,new Vector2(0.4f,0.6f),20,60);
+            s.Append(transformedCamera.DOShakePosition(0.2f,new Vector2(0.4f,0.6f),20,60)).OnComplete(() => 
+                transformedCamera.position = Vector2.Lerp(transformedCamera.position,Vector2.zero,0.5f));
+            transformedCamera.DOShakePosition(0.2f,new Vector2(0.4f,0.6f),20,60).OnComplete(() => 
+                transformedCamera.transform.position = new Vector3(0,0,-10));
+            transformedCamera.DOShakePosition(0.2f,new Vector2(0.4f,0.6f),20,60);
             blast.SetActive(true);
             blast.transform.parent = null;
             Destroy(blast,3);            
@@ -41,8 +47,8 @@ public class firework : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other) {
         scoreTracker.reduceStars();
         if(other.gameObject.tag == "obstacles"){
-            renderer.color = Color.red;
-            explode = false;
+            starRenderer.color = Color.red;
+            canExplode = false;
             Destroy(gameObject,3);
         }
     }

@@ -23,40 +23,41 @@ public class ZoomTrigger : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (enter)
+        if (enter == true)
         {
             //計時realtime並slerp至transform
             //zoom in
+            DOTween.CompleteAll();
             mainCamera.transform.DOMove(new Vector3(transform.position.x,transform.position.y,-10), 0.3f, false);
             mainCamera.DOOrthoSize(1f,0.4f);
             enter = false;
         }
 
-        if (exit)
+        if (exit == true)
         {
             // slerp至(0,0)
             //zoom out
             mainCamera.transform.DOMove(new Vector3(0,0, -10), 0.3f, false);
             mainCamera.DOOrthoSize(5f,0.5f).OnComplete(() => 
             DOTween.CompleteAll());
-
             exit = false;
         }
+        print(Time.deltaTime);
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (zoomReady)
+        if (zoomReady == true)
         {
             zoomReady = false;
             enter = true;
             Time.timeScale = 0.2f;
-            Time.fixedDeltaTime /= 6f;
+            Time.fixedDeltaTime =Time.timeScale*0.02f;
         }
     }
     private void OnTriggerExit2D(Collider2D other)
     {
         exit = true;
         Time.timeScale = 1f;
-        Time.fixedDeltaTime *= 6f;
+        Time.fixedDeltaTime = Time.timeScale*0.02f;
     }
 }
