@@ -302,7 +302,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Slide to choose
 
-    Touch to select'
+    Tap to select'
 --- !u!222 &28090216
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -329,7 +329,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &79562672
 RectTransform:
   m_ObjectHideFlags: 0
@@ -729,6 +729,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageNum: 2
   angle: 5
+  stageName: 
   isSelected: 0
 --- !u!1 &326951237
 GameObject:
@@ -1060,6 +1061,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageNum: 1
   angle: 10
+  stageName: 
   isSelected: 0
 --- !u!1 &600789405
 GameObject:
@@ -1391,6 +1393,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageNum: 5
   angle: -15
+  stageName: 
   isSelected: 0
 --- !u!1 &747725666
 GameObject:
@@ -1606,6 +1609,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageNum: 4
   angle: -10
+  stageName: 
   isSelected: 0
 --- !u!1 &795759090
 GameObject:
@@ -1740,6 +1744,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageNum: 3
   angle: -5
+  stageName: 
   isSelected: 0
 --- !u!1 &885444501
 GameObject:
@@ -2223,6 +2228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageNum: 0
   angle: 15
+  stageName: SampleScene
   isSelected: 1
 --- !u!1 &1084092993
 GameObject:
