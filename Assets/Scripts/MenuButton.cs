@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuButton : MonoBehaviour
 {
@@ -8,28 +9,68 @@ public class MenuButton : MonoBehaviour
 
     Vector3 mousePreviousPOS = Vector3.zero;
     bool track;
+<<<<<<< HEAD
     int onSelected = 0;
     // Start is called before the first frame update
     void Start()
     {
         onSelected = 0;
+=======
+    int selected = 0;
+
+    private float pressTime,startTime,endTime;
+    // Start is called before the first frame update
+    void Start()
+    {
+        pressTime = 0f; 
+        startTime = 0f;
+        endTime = 0f;
+        selected = 0;
+>>>>>>> origin/master
         track = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+<<<<<<< HEAD
 
         if (Input.GetMouseButtonDown(0))
+=======
+        if(Input.GetMouseButtonDown(0))
+>>>>>>> origin/master
         {
-            track = true;
+            startTime  = Time.time;
+            
+            
+        }
+        if(Input.GetMouseButton(0)){
+            pressTime += Time.deltaTime;
+            print(pressTime);
+            if(pressTime > 0.1f){
+                print("isTrack");
+                track = true;
+            }
         }
         if (Input.GetMouseButtonUp(0))
         {
+            endTime = Time.time;
+            if(endTime - startTime < 0.1f){
+                for(int i = 0; i < buttons.Length; i++){
+                    if(i == selected && buttons[i].stageName != ""){
+                        SceneManager.LoadScene(buttons[i].stageName); 
+                    }
+                }
+            }
             track = false;
         }
+<<<<<<< HEAD
         if (track == true)
         {
+=======
+
+        if(track == true){
+>>>>>>> origin/master
             TrackMouse();
         }
 
