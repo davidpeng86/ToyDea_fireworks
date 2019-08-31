@@ -60,7 +60,6 @@
      <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModuleUI.cs" />
      <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
      <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs" />
-     <Compile Include="Assets\scoreTracker1.cs" />
      <Compile Include="Assets\Scripts\AudioManager.cs" />
      <Compile Include="Assets\Scripts\firework.cs" />
      <Compile Include="Assets\Scripts\MenuButton.cs" />

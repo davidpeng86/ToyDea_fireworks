@@ -28,12 +28,13 @@ public class Shoot : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0) && timer>coolDown)
         {
+            //transform.DoMove().SetEase(Ease.)
             timer = 0;
             GameObject obj = Instantiate(prefab, transform);
             obj.transform.parent = null;
             DOTween.CompleteAll();
             s.Append(camera.DOShakePosition(0.15f,new Vector2(0.2f,0.6f),6,0)).OnComplete(() => 
-            camera.position = Vector2.Lerp(camera.position,Vector2.zero,0.5f));
+            camera.position = new Vector3(0,0,-10));
             Rigidbody2D body = obj.GetComponent<Rigidbody2D>();
             body.AddForce(Vector2.up * force, ForceMode2D.Impulse);
         }
