@@ -63,10 +63,14 @@
      <Compile Include="Assets\Scripts\AudioManager.cs" />
      <Compile Include="Assets\Scripts\firework.cs" />
      <Compile Include="Assets\Scripts\MenuButton.cs" />
+     <Compile Include="Assets\Scripts\MovePattern\BirdMovement.cs" />
+     <Compile Include="Assets\Scripts\MovePattern\BoneMovement.cs" />
+     <Compile Include="Assets\Scripts\MovePattern\CoinMovement.cs" />
      <Compile Include="Assets\Scripts\ScoreTracker.cs" />
      <Compile Include="Assets\Scripts\ScreenRes.cs" />
      <Compile Include="Assets\Scripts\Shoot.cs" />
      <Compile Include="Assets\Scripts\Sound.cs" />
+     <Compile Include="Assets\Scripts\Spawner.cs" />
      <Compile Include="Assets\Scripts\Stages.cs" />
      <Compile Include="Assets\Scripts\ZoomTrigger.cs" />
      <None Include="Assets\Demigiant\DOTween\readme.txt" />

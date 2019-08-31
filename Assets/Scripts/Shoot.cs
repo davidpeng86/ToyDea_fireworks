@@ -34,8 +34,10 @@ public class Shoot : MonoBehaviour
             obj.transform.parent = null;
             DOTween.CompleteAll();
             s.Append(
-                camera.DOShakePosition(0.15f,new Vector2(0.2f,0.6f),6,0)).OnComplete(() => 
-            camera.position = new Vector3(0,0,-10));
+                camera.DOMove(new Vector3(0,0.5f,-10),0.05f,false).OnComplete(() =>
+                camera.DOMove(new Vector3(0,0,-10),0.05f,false)));
+            //     camera.DOShakePosition(0.15f,new Vector2(0.2f,0.6f),6,0)).OnComplete(() => 
+            // camera.position = new Vector3(0,0,-10));
             Rigidbody2D body = obj.GetComponent<Rigidbody2D>();
             body.AddForce(Vector2.up * force, ForceMode2D.Impulse);
         }

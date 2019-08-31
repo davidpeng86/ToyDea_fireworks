@@ -29,7 +29,7 @@ public class ZoomTrigger : MonoBehaviour
             //zoom in
             DOTween.CompleteAll();
             mainCamera.transform.DOMove(new Vector3(transform.position.x,transform.position.y,-10), 0.3f, false);
-            mainCamera.DOOrthoSize(1f,0.4f);
+            mainCamera.DOOrthoSize(2f,0.4f);
             enter = false;
         }
 
@@ -42,11 +42,10 @@ public class ZoomTrigger : MonoBehaviour
             DOTween.CompleteAll());
             exit = false;
         }
-        print(Time.deltaTime);
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (zoomReady == true)
+        if (zoomReady == true && other.tag!="obstacles")
         {
             zoomReady = false;
             enter = true;
@@ -56,8 +55,10 @@ public class ZoomTrigger : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        exit = true;
-        Time.timeScale = 1f;
-        Time.fixedDeltaTime = Time.timeScale*0.02f;
+        if(other.tag!="obstacles"){
+            exit = true;
+            Time.timeScale = 1f;
+            Time.fixedDeltaTime = Time.timeScale*0.02f;
+        }
     }
 }

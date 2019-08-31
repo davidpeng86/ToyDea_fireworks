@@ -35,7 +35,7 @@ public class firework : MonoBehaviour
             
             scoreTracker.reduceStars();
             transformedCamera.DOShakePosition(0.2f,new Vector2(0.4f,0.6f),20,60).OnComplete(() => 
-                transformedCamera.transform.position = new Vector3(0,0,-10));
+                transformedCamera.position = new Vector3(0,0,-10));
             scoreTracker.reduceStars();
             transformedCamera.DOShakePosition(0.2f,new Vector2(0.4f,0.6f),20,60);
             blast.SetActive(true);
@@ -49,7 +49,8 @@ public class firework : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other) {
         scoreTracker.reduceStars();
         if(other.gameObject.tag == "obstacles"){
-            renderer.color = Color.red;
+            ZoomTrigger.zoomReady = false;
+            renderer.color = Color.black;
             canExplode = false;
             Destroy(gameObject,3);
         }
