@@ -42,7 +42,9 @@ public class ScoreTracker : MonoBehaviour
             star1.color = Color.yellow;
         else if(stars == 2)
             star1.color = star2.color = Color.yellow;
-        else
+        else if(stars == 3)
             star3.color = star2.color = star1.color = Color.yellow;
+        else
+            return;
     }
 }
