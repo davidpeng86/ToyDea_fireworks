@@ -29,7 +29,7 @@ public class ZoomTrigger : MonoBehaviour
             //zoom in
             DOTween.CompleteAll();
             mainCamera.transform.DOMove(new Vector3(transform.position.x,transform.position.y,-10), 0.3f, false);
-            mainCamera.DOOrthoSize(2f,0.4f);
+            mainCamera.DOOrthoSize(2.5f,0.4f);
             enter = false;
         }
 

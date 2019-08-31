@@ -14,7 +14,9 @@ public class Shoot : MonoBehaviour
     Transform camera;
     Sequence s ;
 
+    public Animator doge;
     float timer = 0;
+    float barkTime = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,8 +42,15 @@ public class Shoot : MonoBehaviour
             // camera.position = new Vector3(0,0,-10));
             Rigidbody2D body = obj.GetComponent<Rigidbody2D>();
             body.AddForce(Vector2.up * force, ForceMode2D.Impulse);
+            doge.SetTrigger("woof");
+            barkTime = 0f;
         }
         timer += Time.deltaTime;
-
+        barkTime += Time.deltaTime;
+        if(timer<coolDown+1 && barkTime>1){
+            barkTime = 0f;
+            doge.SetTrigger("woof");
+        }
+        
     }
 }
