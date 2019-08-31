@@ -45,6 +45,4 @@ public class ScoreTracker : MonoBehaviour
         else
             star3.color = star2.color = star1.color = Color.yellow;
     }
-    
-    //#E4E717
 }
