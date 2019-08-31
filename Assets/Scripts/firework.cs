@@ -6,8 +6,8 @@ public class firework : MonoBehaviour
 {
     ScoreTracker scoreTracker;
     Rigidbody2D body;
-    Transform camera;
-    bool explode = true;
+    Transform transformedCamera;
+    bool canExplode = true;
     [SerializeField]
     GameObject blast;
     SpriteRenderer renderer;
@@ -36,6 +36,8 @@ public class firework : MonoBehaviour
             scoreTracker.reduceStars();
             camera.DOShakePosition(0.2f,new Vector2(0.4f,0.6f),20,60).OnComplete(() => 
                 camera.transform.position = new Vector3(0,0,-10));
+            scoreTracker.reduceStars();
+            camera.DOShakePosition(0.2f,new Vector2(0.4f,0.6f),20,60);
             blast.SetActive(true);
             blast.transform.parent = null;
             Destroy(blast,3);            

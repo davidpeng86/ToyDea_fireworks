@@ -208,8 +208,13 @@ MonoBehaviour:
 =======
     width: 320
     height: 260
+<<<<<<< HEAD
+  m_MinSize: {x: 202, y: 224}
+  m_MaxSize: {x: 4002, y: 4024}
+=======
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
+>>>>>>> origin/master
   m_ActualView: {fileID: 15}
 >>>>>>> 1c76322bdc8046331c82a41d8375d96807289238
   m_Panes:
@@ -242,8 +247,13 @@ MonoBehaviour:
 =======
     width: 869
     height: 260
+<<<<<<< HEAD
+  m_MinSize: {x: 204, y: 224}
+  m_MaxSize: {x: 4004, y: 4024}
+=======
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
+>>>>>>> origin/master
   m_ActualView: {fileID: 16}
 >>>>>>> 1c76322bdc8046331c82a41d8375d96807289238
   m_Panes:
@@ -336,8 +346,13 @@ MonoBehaviour:
 =======
     width: 772
     height: 608
+<<<<<<< HEAD
+  m_MinSize: {x: 204, y: 224}
+  m_MaxSize: {x: 4004, y: 4024}
+=======
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
+>>>>>>> origin/master
   m_ActualView: {fileID: 14}
 >>>>>>> 1c76322bdc8046331c82a41d8375d96807289238
   m_Panes:
@@ -768,10 +783,17 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
+<<<<<<< HEAD
+    m_HBaseRangeMin: -192
+    m_HBaseRangeMax: 192
+    m_VBaseRangeMin: -108
+    m_VBaseRangeMax: 108
+=======
     m_HBaseRangeMin: -207
     m_HBaseRangeMax: 207
     m_VBaseRangeMin: -448
     m_VBaseRangeMax: 448
+>>>>>>> origin/master
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -803,6 +825,7 @@ MonoBehaviour:
       y: -448
       width: 1107.4647
       height: 896
+>>>>>>> origin/master
     m_MinimalGUI: 1
   m_defaultScale: 0.45870537
   m_TargetTexture: {fileID: 0}

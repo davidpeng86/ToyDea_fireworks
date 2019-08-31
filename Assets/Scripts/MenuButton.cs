@@ -39,7 +39,7 @@ public class MenuButton : MonoBehaviour
                 track = true;
             }
         }
-        if(Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0))
         {
             endTime = Time.time;
             if(endTime - startTime < 0.1f){
@@ -54,37 +54,35 @@ public class MenuButton : MonoBehaviour
 
         if(track == true){
             TrackMouse();
-        }   
-        
+        }
+
     }
 
-    void TrackMouse(){
+    void TrackMouse()
+    {
         float difference = Input.mousePosition.x - mousePreviousPOS.x;
-            if(Mathf.Abs(difference)> 10)
+        if (Mathf.Abs(difference) > 10)
+        {
+            if (onSelected >= 0 && onSelected <= 5)
             {
-                if(selected >= 0 && selected <= 5){
-                    if(difference > 0 && selected < 5)
-                            selected++;
-                    if(difference < 0 && selected > 0)
-                            selected--;
-                }
-                for(int i = 0; i < buttons.Length; i++){
-                    if(i == selected){
-                        buttons[i].isSelected = true;
-                        transform.rotation = Quaternion.Euler(0,0,buttons[i].angle);
-                    }
-                    else{
-                        buttons[i].isSelected = false;
-                    }
-                }
-                // if(Mathf.Cos(Mathf.Deg2Rad*transform.eulerAngles.z) > Mathf.Cos(Mathf.Deg2Rad*16) ) 
-                // {
-                //     transform.Rotate(0f,0f,-5f*Mathf.Sign(difference),Space.World);
-                // }
+                if (difference > 0 && onSelected < 5)
+                    onSelected++;
+                if (difference < 0 && onSelected > 0)
+                    onSelected--;
             }
-            mousePreviousPOS = Input.mousePosition;
-            
+            for (int i = 0; i < buttons.Length; i++)
+                buttons[i].isSelected = false;  //return all seleted to zero
+
+            buttons[onSelected] = true;
+            transform.rotation = Quaternion.Euler(0, 0, buttons[onSelected].angle);
+            // if(Mathf.Cos(Mathf.Deg2Rad*transform.eulerAngles.z) > Mathf.Cos(Mathf.Deg2Rad*16) ) 
+            // {
+            //     transform.Rotate(0f,0f,-5f*Mathf.Sign(difference),Space.World);
+            // }
+        }
+        mousePreviousPOS = Input.mousePosition;
+
     }
 
-    
+
 }
