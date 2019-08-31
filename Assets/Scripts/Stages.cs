@@ -7,6 +7,8 @@ public class Stages : MonoBehaviour
     // Start is called before the first frame update
     public int stageNum;
     public int angle;
+
+    public string stageName;
     bool isPlaying = false;
     public bool isSelected = false;
     
