@@ -34,8 +34,8 @@ public class Shoot : MonoBehaviour
             GameObject obj = Instantiate(prefab, transform);
             obj.transform.parent = null;
             DOTween.CompleteAll();
-            s.Append(camera.DOShakePosition(0.15f,new Vector2(0.2f,0.6f),6,0)).OnComplete(() => 
-            camera.position = new Vector3(0,0,-10));
+            s.Append(transformedCamera.DOShakePosition(0.15f,new Vector2(0.2f,0.6f),6,0)).OnComplete(() => 
+            transformedCamera.position = new Vector3(0,0,-10));
             s.Append(transformedCamera.DOShakePosition(0.15f,new Vector2(0.2f,0.6f),6,0)).OnComplete(() => 
             transformedCamera.position = Vector2.Lerp(transformedCamera.position,Vector2.zero,0.5f));
             Rigidbody2D body = obj.GetComponent<Rigidbody2D>();

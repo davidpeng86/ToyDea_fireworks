@@ -53,11 +53,7 @@ PlayerSettings:
   iosShowActivityIndicatorOnLoading: -1
   androidShowActivityIndicatorOnLoading: -1
   iosAppInBackgroundBehavior: 0
-<<<<<<< HEAD
-  displayResolutionDialog: 2
-=======
   displayResolutionDialog: 1
->>>>>>> fixGit
   iosAllowHTTPDownload: 1
   allowedAutorotateToPortrait: 1
   allowedAutorotateToPortraitUpsideDown: 1
@@ -121,11 +117,7 @@ PlayerSettings:
     5:4: 0
     16:10: 0
     16:9: 0
-<<<<<<< HEAD
-    Others: 1
-=======
     Others: 0
->>>>>>> fixGit
   bundleVersion: 0.1
   preloadedAssets: []
   metroInputSource: 0
