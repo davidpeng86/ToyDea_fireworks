@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8374653786213832859}
   - component: {fileID: 5377239099389516666}
   - component: {fileID: 2739472719081203895}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4769,9 +4769,9 @@ GameObject:
   - component: {fileID: 4750015192716412269}
   - component: {fileID: 4769213131300792053}
   - component: {fileID: 1131463142282692173}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: projectile
-  m_TagString: Untagged
+  m_TagString: firework
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4898,5 +4898,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 539b2cb3f12c34928aac78e623377363, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 0}
   blast: {fileID: 1122857997958579759}

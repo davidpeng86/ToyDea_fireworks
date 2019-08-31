@@ -27,6 +27,7 @@ public class firework : MonoBehaviour
             camera.DOShakePosition(0.2f,new Vector2(0.4f,0.6f),20,60);
             blast.SetActive(true);
             blast.transform.parent = null;
+            Destroy(blast,3);
             switch(Shoot.shootNum){
                 case 1:
                     ScoreTracker.stars = 3;
