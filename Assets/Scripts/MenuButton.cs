@@ -39,14 +39,10 @@ public class MenuButton : MonoBehaviour
             if(Mathf.Abs(difference)> 10)
             {
                 if(selected >= 0 && selected <= 5){
-                    if(difference > 0){
-                        if(selected<5)
+                    if(difference > 0 && selected < 5)
                             selected++;
-                    }
-                    if(difference < 0){
-                        if(selected>0)
+                    if(difference < 0 && selected > 0)
                             selected--;
-                    }
                 }
                 for(int i = 0; i < buttons.Length; i++){
                     if(i == selected){
