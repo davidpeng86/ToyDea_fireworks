@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\firework.cs" />
      <Compile Include="Assets\Scripts\MenuButton.cs" />
      <Compile Include="Assets\Scripts\ScoreTracker.cs" />
+     <Compile Include="Assets\Scripts\ScreenRes.cs" />
      <Compile Include="Assets\Scripts\Shoot.cs" />
      <Compile Include="Assets\Scripts\Sound.cs" />
      <Compile Include="Assets\Scripts\Stages.cs" />
