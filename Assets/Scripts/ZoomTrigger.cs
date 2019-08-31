@@ -6,13 +6,13 @@ public class ZoomTrigger : MonoBehaviour
 {
     // Start is called before the first frame update
     public static bool zoomReady = true;
-    Camera camera;
+    Camera mainCamera;
     bool enter;
     bool exit;
     void Start()
     {
         zoomReady = true;
-        camera = Camera.main;
+        mainCamera = Camera.main;
         enter = false;
         exit = false;
     }

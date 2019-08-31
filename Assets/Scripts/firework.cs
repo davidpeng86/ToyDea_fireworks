@@ -38,7 +38,7 @@ public class firework : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.tag == "obstacles"){
             canExplode = false;
-            Destroy(gameObject,3);
+            Destroy(gameObject, 3);
         }
     }
 }
