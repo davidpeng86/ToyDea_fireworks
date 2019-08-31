@@ -10,9 +10,11 @@ public class firework : MonoBehaviour
     [SerializeField]
     GameObject blast;
     SpriteRenderer renderer;
+    Sequence s ;
     // Start is called before the first frame update
     void Start()
     {
+        s = DOTween.Sequence();
         ZoomTrigger.zoomReady = true;
         camera = Camera.main.transform;
         body = GetComponent<Rigidbody2D>();
@@ -24,7 +26,11 @@ public class firework : MonoBehaviour
     void Update()
     {
         if(body.velocity.y <= 0f && explode == true){
-            camera.DOShakePosition(0.2f,new Vector2(0.4f,0.6f),20,60);
+            
+            //DOTween.CompleteAll();
+            s.Append(camera.DOShakePosition(0.2f,new Vector2(0.4f,0.6f),20,60)).OnComplete(() => 
+            camera.position = Vector2.Lerp(camera.position,Vector2.zero,0.5f));
+            
             blast.SetActive(true);
             blast.transform.parent = null;
             Destroy(blast,3);

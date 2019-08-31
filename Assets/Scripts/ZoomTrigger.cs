@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using DG.Tweening;
 public class ZoomTrigger : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -9,8 +9,11 @@ public class ZoomTrigger : MonoBehaviour
     Camera mainCamera;
     bool enter;
     bool exit;
+    Sequence s ;
     void Start()
     {
+        DOTween.useSmoothDeltaTime = true;
+        s = DOTween.Sequence();
         zoomReady = true;
         mainCamera = Camera.main;
         enter = false;
@@ -18,14 +21,14 @@ public class ZoomTrigger : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (enter)
         {
             //計時realtime並slerp至transform
             //zoom in
-            // mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, transform.position, 0.5f);
-            // mainCamera.orthographicSize = Mathf.SmoothStep(5, 1, 0.1f);
+            mainCamera.transform.DOMove(new Vector3(transform.position.x,transform.position.y,-10), 0.3f, false);
+            mainCamera.DOOrthoSize(1f,0.4f);
             enter = false;
         }
 
@@ -33,8 +36,10 @@ public class ZoomTrigger : MonoBehaviour
         {
             // slerp至(0,0)
             //zoom out
-            // mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, Vector2.zero, 0.5f);
-            // mainCamera.orthographicSize = Mathf.SmoothStep(1, 5, 0.1f);
+            mainCamera.transform.DOMove(new Vector3(0,0, -10), 0.3f, false);
+            mainCamera.DOOrthoSize(5f,0.5f).OnComplete(() => 
+            DOTween.CompleteAll());
+
             exit = false;
         }
     }
@@ -45,13 +50,13 @@ public class ZoomTrigger : MonoBehaviour
             zoomReady = false;
             enter = true;
             Time.timeScale = 0.2f;
-            Time.fixedDeltaTime *= 0.2f;
+            Time.fixedDeltaTime /= 6f;
         }
     }
     private void OnTriggerExit2D(Collider2D other)
     {
         exit = true;
         Time.timeScale = 1f;
-        Time.fixedDeltaTime *= 5f;
+        Time.fixedDeltaTime *= 6f;
     }
 }
