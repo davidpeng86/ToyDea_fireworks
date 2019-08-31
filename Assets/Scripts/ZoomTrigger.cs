@@ -9,8 +9,6 @@ public class ZoomTrigger : MonoBehaviour
     Camera mainCamera;
     bool enter;
     bool exit;
-    const int zoomSpeed = 20;
-
     void Start()
     {
         zoomReady = true;
