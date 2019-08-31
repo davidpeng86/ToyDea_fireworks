@@ -4,6 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 public class Shoot : MonoBehaviour
 {
+    //public ScoreTracker scoreTracker;
     [SerializeField]
     GameObject prefab;
     public static int shootNum = 0;

@@ -4,6 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 public class firework : MonoBehaviour
 {
+    ScoreTracker scoreTracker;
     Rigidbody2D body;
     Transform camera;
     bool explode = true;
@@ -14,6 +15,7 @@ public class firework : MonoBehaviour
     void Start()
     {
         ZoomTrigger.zoomReady = true;
+        scoreTracker = FindObjectOfType<ScoreTracker>();
         camera = Camera.main.transform;
         body = GetComponent<Rigidbody2D>();
         renderer = GetComponent<SpriteRenderer>();
@@ -24,19 +26,18 @@ public class firework : MonoBehaviour
     void Update()
     {
         if(body.velocity.y <= 0f && explode == true){
+            scoreTracker.reduceStars();
             camera.DOShakePosition(0.2f,new Vector2(0.4f,0.6f),20,60);
             blast.SetActive(true);
             blast.transform.parent = null;
-            Destroy(blast,3);
-            if(Shoot.shootNum > 3 || Shoot.shootNum < 0)
-                ScoreTracker.stars = 0;    
-            else
-                ScoreTracker.stars = 4 - Shoot.shootNum;
-            print(ScoreTracker.stars);
+            Destroy(blast,3);            
+            print(scoreTracker.getStars());
             Destroy(gameObject);
+            scoreTracker.doFinish();
         }
     }
     private void OnCollisionEnter2D(Collision2D other) {
+        scoreTracker.reduceStars();
         if(other.gameObject.tag == "obstacles"){
             renderer.color = Color.red;
             explode = false;
