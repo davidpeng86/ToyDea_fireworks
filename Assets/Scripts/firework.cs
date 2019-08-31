@@ -47,6 +47,7 @@ public class firework : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.tag == "obstacles"){
+            renderer.color = Color.red;
             explode = false;
             Destroy(gameObject,3);
         }

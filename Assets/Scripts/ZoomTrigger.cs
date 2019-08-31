@@ -24,8 +24,8 @@ public class ZoomTrigger : MonoBehaviour
         {
             //計時realtime並slerp至transform
             //zoom in
-            mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, transform.position, 0.5f);
-            mainCamera.orthographicSize = Mathf.SmoothStep(5, 1, 0.5f);
+            // mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, transform.position, 0.5f);
+            // mainCamera.orthographicSize = Mathf.SmoothStep(5, 1, 0.1f);
             enter = false;
         }
 
@@ -33,8 +33,8 @@ public class ZoomTrigger : MonoBehaviour
         {
             // slerp至(0,0)
             //zoom out
-            mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, Vector2.zero, 0.5f);
-            mainCamera.orthographicSize = Mathf.SmoothStep(1, 5, 0.5f);
+            // mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, Vector2.zero, 0.5f);
+            // mainCamera.orthographicSize = Mathf.SmoothStep(1, 5, 0.1f);
             exit = false;
         }
     }
