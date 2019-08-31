@@ -38,12 +38,14 @@ public class MenuButton : MonoBehaviour
         float difference = Input.mousePosition.x - mousePreviousPOS.x;
             if(Mathf.Abs(difference)> 10)
             {
-                if(selected >= 0 && selected < 5){
+                if(selected >= 0 && selected <= 5){
                     if(difference > 0){
-                        selected++;
+                        if(selected<5)
+                            selected++;
                     }
                     if(difference < 0){
-                        selected--;
+                        if(selected>0)
+                            selected--;
                     }
                 }
                 for(int i = 0; i < buttons.Length; i++){
