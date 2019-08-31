@@ -42,13 +42,8 @@ PlayerSettings:
   m_SplashScreenLogos: []
   m_VirtualRealitySplashScreen: {fileID: 0}
   m_HolographicTrackingLossScreen: {fileID: 0}
-<<<<<<< HEAD
-  defaultScreenWidth: 1024
-  defaultScreenHeight: 768
-=======
   defaultScreenWidth: 828
   defaultScreenHeight: 1792
->>>>>>> origin/master
   defaultScreenWidthWeb: 960
   defaultScreenHeightWeb: 600
   m_StereoRenderingPath: 0
@@ -59,10 +54,10 @@ PlayerSettings:
   androidShowActivityIndicatorOnLoading: -1
   iosAppInBackgroundBehavior: 0
 <<<<<<< HEAD
-  displayResolutionDialog: 1
-=======
   displayResolutionDialog: 2
->>>>>>> origin/master
+=======
+  displayResolutionDialog: 1
+>>>>>>> fixGit
   iosAllowHTTPDownload: 1
   allowedAutorotateToPortrait: 1
   allowedAutorotateToPortraitUpsideDown: 1
@@ -75,7 +70,7 @@ PlayerSettings:
   androidStartInFullscreen: 1
   androidRenderOutsideSafeArea: 0
   androidBlitType: 0
-  defaultIsNativeResolution: 1
+  defaultIsNativeResolution: 0
   macRetinaSupport: 1
   runInBackground: 1
   captureSingleScreen: 0
@@ -87,7 +82,7 @@ PlayerSettings:
   submitAnalytics: 1
   usePlayerLog: 1
   bakeCollisionMeshes: 0
-  forceSingleInstance: 0
+  forceSingleInstance: 1
   resizableWindow: 0
   useMacAppStoreValidation: 0
   macAppStoreCategory: public.app-category.games
@@ -99,13 +94,9 @@ PlayerSettings:
   xboxEnableKinectAutoTracking: 0
   xboxEnableFitness: 0
   visibleInBackground: 1
-<<<<<<< HEAD
-  allowFullscreenSwitch: 1
-=======
   allowFullscreenSwitch: 0
->>>>>>> origin/master
   graphicsJobMode: 0
-  fullscreenMode: 1
+  fullscreenMode: 2
   xboxSpeechDB: 0
   xboxEnableHeadOrientation: 0
   xboxEnableGuest: 0
@@ -126,18 +117,15 @@ PlayerSettings:
   switchNVNOtherPoolsGranularity: 16777216
   vulkanEnableSetSRGBWrite: 0
   m_SupportedAspectRatios:
-<<<<<<< HEAD
-    4:3: 1
-    5:4: 1
-    16:10: 1
-    16:9: 1
-=======
     4:3: 0
     5:4: 0
     16:10: 0
     16:9: 0
->>>>>>> origin/master
+<<<<<<< HEAD
     Others: 1
+=======
+    Others: 0
+>>>>>>> fixGit
   bundleVersion: 0.1
   preloadedAssets: []
   metroInputSource: 0
