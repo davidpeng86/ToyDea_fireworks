@@ -8,6 +8,7 @@ public class ScoreTracker : MonoBehaviour
     private int stars;
     public Image star1, star2, star3, hasStar, noStar, oneStarDog, twoStarDog, threeStarDog, starDog;
     public GameObject canvas;
+    public Shoot shootLib;
     private bool isFinish = false;
     // Start is called before the first frame update
     void Start()
@@ -36,6 +37,7 @@ public class ScoreTracker : MonoBehaviour
         {
             canvas.SetActive(true);
             showScore();
+            shootLib.coolDown = 2147483647;
         }
     }
     public void doFinish()

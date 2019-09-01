@@ -1240,7 +1240,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 95154e67a78dacc4dae2a5f0a3780748, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 66db43d9d7d5351439dcb821c6ffeb4a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1678,7 +1678,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: fdfb7f47a5e1ed14a98aa74dcda263c6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8cd53daf229c0e44b81e46af8967d162, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1831,7 +1831,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: f3ac8a09f24799a45a9a3fbbc066edbc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2220,7 +2220,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 81ee1685542b92b4ea3382fd3778baec, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 52d28ab4120c88d408d425197812fcb6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2559,6 +2559,7 @@ MonoBehaviour:
   threeStarDog: {fileID: 460422444}
   starDog: {fileID: 1945736176}
   canvas: {fileID: 2088249789}
+  shootLib: {fileID: 1822809607}
 --- !u!1 &2066427031
 GameObject:
   m_ObjectHideFlags: 0
@@ -2731,6 +2732,7 @@ MonoBehaviour:
   threeStarDog: {fileID: 460422444}
   starDog: {fileID: 1945736176}
   canvas: {fileID: 2088249789}
+  shootLib: {fileID: 0}
 --- !u!114 &2088249795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2743,7 +2745,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0511da8c3d50346efbbe8c5cf6f1365d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreTracker: {fileID: 2088249794}
 --- !u!1 &2144080036
 GameObject:
   m_ObjectHideFlags: 0
