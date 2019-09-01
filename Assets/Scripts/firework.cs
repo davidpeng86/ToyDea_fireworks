@@ -36,7 +36,6 @@ public class firework : MonoBehaviour
             scoreTracker.reduceStars();
             transformedCamera.DOShakePosition(0.2f,new Vector2(0.4f,0.6f),20,60).OnComplete(() => 
                 transformedCamera.position = new Vector3(0,0,-10));
-            scoreTracker.reduceStars();
             transformedCamera.DOShakePosition(0.2f,new Vector2(0.4f,0.6f),20,60);
             blast.SetActive(true);
             blast.transform.parent = null;
@@ -47,11 +46,11 @@ public class firework : MonoBehaviour
         }
     }
     private void OnCollisionEnter2D(Collision2D other) {
-        scoreTracker.reduceStars();
         if(other.gameObject.tag == "obstacles"){
             ZoomTrigger.zoomReady = false;
             renderer.color = Color.black;
             canExplode = false;
+            scoreTracker.reduceStars();
             Destroy(gameObject,3);
         }
     }
