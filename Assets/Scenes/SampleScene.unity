@@ -2733,7 +2733,7 @@ MonoBehaviour:
   threeStarDog: {fileID: 460422444}
   starDog: {fileID: 1945736176}
   canvas: {fileID: 2088249789}
-  shootLib: {fileID: 0}
+  shootLib: {fileID: 1822809607}
 --- !u!114 &2088249795
 MonoBehaviour:
   m_ObjectHideFlags: 0
