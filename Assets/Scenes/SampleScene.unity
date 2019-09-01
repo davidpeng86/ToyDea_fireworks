@@ -783,7 +783,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -2320,7 +2320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coolDown: 2
-  prefab: {fileID: 5847489927024154332, guid: 139c86d4ec03a644cbe9d4f77fa7b379, type: 3}
+  prefab: {fileID: 5847489927024154332, guid: 35602ab2bcced47089acd6339b8276b6, type: 3}
   blast: {fileID: 8475862644471587941, guid: 99d4813d6a551114784675dd8eb6f80f, type: 3}
   force: 2.5
   doge: {fileID: 1214015052}
