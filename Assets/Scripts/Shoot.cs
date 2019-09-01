@@ -36,6 +36,7 @@ public class Shoot : MonoBehaviour
             timer = 0;
             GameObject obj = Instantiate(prefab, transform);
             obj.transform.parent = null;
+           
             DOTween.CompleteAll();
             s.Append(
                 camera.DOMove(new Vector3(0,0.5f,-10),0.05f,false).OnComplete(() =>

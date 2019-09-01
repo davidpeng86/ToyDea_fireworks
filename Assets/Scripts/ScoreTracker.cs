@@ -65,7 +65,8 @@ public class ScoreTracker : MonoBehaviour
             star3.sprite = star2.sprite = star1.sprite = hasStar.sprite;
             starDog.sprite = threeStarDog.sprite;
         }
-        else
-            return;
+        else{
+            star1.sprite = star3.sprite = star2.sprite = noStar.sprite;
+        }
     }
 }
