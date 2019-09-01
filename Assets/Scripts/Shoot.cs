@@ -8,6 +8,8 @@ public class Shoot : MonoBehaviour
     //public ScoreTracker scoreTracker;
     [SerializeField]
     GameObject prefab;
+    [SerializeField]
+    GameObject blast;
     public static int shootNum = 0;
     [SerializeField]
     float force = 10;
@@ -44,6 +46,8 @@ public class Shoot : MonoBehaviour
             body.AddForce(Vector2.up * force, ForceMode2D.Impulse);
             doge.SetTrigger("woof");
             barkTime = 0f;
+            GameObject burst = Instantiate(blast, transform);
+            Destroy(burst,1f);
         }
         timer += Time.deltaTime;
         barkTime += Time.deltaTime;

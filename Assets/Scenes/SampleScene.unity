@@ -2321,6 +2321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coolDown: 2
   prefab: {fileID: 5847489927024154332, guid: 35602ab2bcced47089acd6339b8276b6, type: 3}
+  blast: {fileID: 8475862644471587941, guid: 99d4813d6a551114784675dd8eb6f80f, type: 3}
   force: 2.5
   doge: {fileID: 1214015052}
 --- !u!1 &1916409642
