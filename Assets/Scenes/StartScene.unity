@@ -574,7 +574,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageNum: 2
   angle: 5
-  stageName: 
+  stageName: graph2
   isSelected: 0
 --- !u!1 &372764880
 GameObject:
@@ -782,7 +782,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageNum: 1
   angle: 10
-  stageName: 
+  stageName: graph3
   isSelected: 0
 --- !u!1 &564493016
 GameObject:
@@ -1332,7 +1332,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageNum: 3
   angle: -5
-  stageName: 
+  stageName: SampleScene
   isSelected: 0
 --- !u!1 &851672707
 GameObject:
@@ -1678,7 +1678,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageNum: 0
   angle: 15
-  stageName: SampleScene
+  stageName: bird
   isSelected: 1
 --- !u!1 &1095031675
 GameObject:
