@@ -153,8 +153,8 @@ MonoBehaviour:
   oneStarDog: {fileID: 2022248293}
   twoStarDog: {fileID: 698147719}
   threeStarDog: {fileID: 572834627}
-  starDog: {fileID: 0}
-  canvas: {fileID: 31985870}
+  starDog: {fileID: 2073812386}
+  canvas: {fileID: 31985866}
 --- !u!114 &31985868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,6 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0511da8c3d50346efbbe8c5cf6f1365d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreTracker: {fileID: 31985867}
 --- !u!1 &51713689
 GameObject:
   m_ObjectHideFlags: 0
@@ -1208,7 +1209,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: db5abe6fa9aacda4091e38e95100de9e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d0e79ca94649e473086cc0a0da6fde3f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

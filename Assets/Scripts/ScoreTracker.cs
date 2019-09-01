@@ -25,6 +25,10 @@ public class ScoreTracker : MonoBehaviour
     {
         return stars;
     }
+
+    public void resetStar(){
+        stars = 4;
+    }
     // Update is called once per frame
     void Update()
     {
