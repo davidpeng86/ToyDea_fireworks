@@ -53,9 +53,19 @@ public class ZoomTrigger : MonoBehaviour
             Time.fixedDeltaTime =Time.timeScale*0.02f;
         }
     }
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        firework fire = other.gameObject.GetComponent<firework>();
+        if (fire != null && fire.canExplode == false){
+            exit = true;
+            Time.timeScale = 1f;
+            Time.fixedDeltaTime = Time.timeScale*0.02f;
+        }
+
+    }
     private void OnTriggerExit2D(Collider2D other)
     {
-        if(other.tag!="obstacles"){
+        if(other.tag!="obstacles" && !exit){
             exit = true;
             Time.timeScale = 1f;
             Time.fixedDeltaTime = Time.timeScale*0.02f;

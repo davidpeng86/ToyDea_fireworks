@@ -7,7 +7,7 @@ public class firework : MonoBehaviour
     ScoreTracker scoreTracker;
     Rigidbody2D body;
     Transform transformedCamera;
-    bool canExplode = true;
+    public bool canExplode = true;
     [SerializeField]
     GameObject blast;
     SpriteRenderer renderer;
