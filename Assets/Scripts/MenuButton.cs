@@ -6,8 +6,9 @@ using UnityEngine.SceneManagement;
 public class MenuButton : MonoBehaviour
 {
     public Stages[] buttons = new Stages[6];
-
+    public Animator anim;
     Vector3 mousePreviousPOS = Vector3.zero;
+    public static bool animationDone = false;
     bool track;
     int onSelected = 0;
 
@@ -19,37 +20,44 @@ public class MenuButton : MonoBehaviour
         startTime = 0f;
         endTime = 0f;
         onSelected = 0;
+        animationDone = false;
         track = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
-        {
-            startTime  = Time.time;
-            
-            
-        }
-        if(Input.GetMouseButton(0)){
-            pressTime += Time.deltaTime;
-            print(pressTime);
-            if(pressTime > 0.1f){
-                print("isTrack");
-                track = true;
+        if(animationDone){
+            if(Input.GetMouseButtonDown(0))
+            {
+                startTime  = Time.time;
             }
-        }
-        if (Input.GetMouseButtonUp(0))
-        {
-            endTime = Time.time;
-            if(endTime - startTime < 0.1f){
-                for(int i = 0; i < buttons.Length; i++){
-                    if(i == onSelected && buttons[i].stageName != ""){
-                        SceneManager.LoadScene(buttons[i].stageName); 
-                    }
+            if(Input.GetMouseButton(0)){
+                pressTime += Time.deltaTime;
+                print(pressTime);
+                if(pressTime > 0.1f){
+                    print("isTrack");
+                    track = true;
                 }
             }
-            track = false;
+            if (Input.GetMouseButtonUp(0))
+            {
+                endTime = Time.time;
+                if(endTime - startTime < 0.1f){
+                    for(int i = 0; i < buttons.Length; i++){
+                        if(i == onSelected && buttons[i].stageName != ""){
+                            SceneManager.LoadScene(buttons[i].stageName); 
+                        }
+                    }
+                }
+                track = false;
+            }
+        }
+        else{
+            if(Input.GetMouseButtonDown(0))
+            {
+                anim.PlayInFixedTime("start", -1, 4.5f);
+            }
         }
 
         if(track == true){
@@ -84,5 +92,5 @@ public class MenuButton : MonoBehaviour
 
     }
 
-
+    
 }
